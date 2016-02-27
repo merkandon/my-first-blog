@@ -4,19 +4,12 @@
     </head>
     <body>
         <div>
-            <h1><a href="">Miou's Blog</a></h1>
+          {% for post in posts %}
+  <div>
+      <p>publié: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaks }}</p>
         </div>
-
-        <div>
-            <p>published: 27.02.16, 15:52</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Blablabla.</p>
-        </div>
-
-        <div>
-            <p>published: 27.02.16, 15:53</p>
-            <h2><a href="">Mon second post</a></h2>
-            <p>Blablibloblu.</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
